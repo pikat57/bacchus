@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Les Producteurs </title>
+    </head>
+        
+    <body>
+	
+        <h2> {{ producteur.nom }} </h2>
+                    <h4>adresse</h4>  <p> {{ producteur.adresse }} <br>
+                                          {{ producteur.ville}} <br>
+                                          {{ producteur.pays }} </p>  
+                    <h3>responsable</h3>  <p> {{ producteur.responsable }} </p>  
+                    <h3>telephone</h3>  <p> {{ producteur.telephone }} </p>  
+                    <h3>mail</h3>  <p> {{ producteur.mail }} </p> 
+                    <h3>Web</h3>  <p> {{ producteur.siteWeb }} </p> 
+                    
+        <a href= "{{ path('producteur') }}" > Retour à la liste </a>      
+                 
+    </body>
+</html>
+{# empty Twig template #}

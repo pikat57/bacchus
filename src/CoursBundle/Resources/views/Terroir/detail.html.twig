@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Les terroirs </title>
+    </head>
+        
+    <body>
+	
+        <h2> {{ terroir.nom }} </h2>
+                    <h4>adresse</h4>  <p> {{ terroir.adresse }} <br>
+                                          {{ terroir.ville}} <br>
+                                          {{ terroir.pays }} </p>  
+                    <h3>responsable</h3>  <p> {{ terroir.responsable }} </p>  
+                    <h3>telephone</h3>  <p> {{ terroir.telephone }} </p>  
+                    <h3>mail</h3>  <p> {{ terroir.mail }} </p> 
+                    <h3>Web</h3>  <p> {{ terroir.siteWeb }} </p> 
+                    
+        <a href= "{{ path('terroir') }}" > Retour à la liste </a>      
+                 
+    </body>
+</html>
+{# empty Twig template #}

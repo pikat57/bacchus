@@ -1,0 +1,124 @@
+cours_homepage:
+    path:     /
+    defaults: { _controller: CoursBundle:Default:index }
+    
+    
+  # Gestion de l'entitée Cepage
+    
+cepage:
+    path: /cepage
+    defaults: { _controller: CoursBundle:Cepage:affichage}
+
+add_cepage:
+    path: /cepage/add
+    defaults: { _controller: CoursBundle:Cepage:add}
+    
+info_cepage:
+    path: /cepage/{id}/consultation
+    defaults: { _controller: CoursBundle:Cepage:detail}
+    
+suppression_cepage:
+        path: /cepage/{id}/suppression
+        defaults: { _controller: CoursBundle:Cepage:suppression}
+        
+modification_cepage:
+    path: /cepage/{id}/modification
+    defaults: { _controller: CoursBundle:Cepage:modification}
+    
+    
+    
+    
+    
+# Gestion de l'entitée Plat
+
+plat:
+    path: /plat
+    defaults : {_controller: CoursBundle:Plat:affichage}
+    
+add_plat:
+    path: /plat/add
+    defaults: {_controller: CoursBundle:Plat:add}
+    
+info_plat:
+    path : /plat/{id}/consultation
+    defaults: {_controller: CoursBundle:Plat:detail}
+    
+suppression_plat:
+    path: /plat/{id}/suppression
+    defaults: { _controller: CoursBundle:Plat:suppression}   
+    
+    
+    
+#gestion de l'entitée producteur
+
+producteur:
+    path: /producteur
+    defaults : {_controller: CoursBundle:Producteur:affichage}
+    
+add_producteur:
+    path: /producteur/add
+    defaults: {_controller: CoursBundle:Producteur:add}
+    
+info_producteur:
+    path : /producteur/{id}/consultation
+    defaults: {_controller: CoursBundle:Producteur:detail}
+    
+suppression_producteur:
+    path: /producteur/{id}/suppression
+    defaults: { _controller: CoursBundle:Producteur:suppression} 
+    
+    
+    #gestion de l'entitée terroir
+
+terroir:
+    path: /terroir
+    defaults : {_controller: CoursBundle:Terroir:affichage}
+    
+add_terroir:
+    path: /terroir/add
+    defaults: {_controller: CoursBundle:Terroir:add}
+    
+info_terroir:
+    path : /terroir/{id}/consultation
+    defaults: {_controller: CoursBundle:Terroir:detail}
+    
+suppression_terroir:
+    path: /terroir/{id}/suppression
+    defaults: { _controller: CoursBundle:Terroir:suppression} 
+    
+    
+   #gestion de l'entitée vin  
+    
+vin:
+    path: /vin
+    defaults : {_controller: CoursBundle:Vin:affichage}
+    
+add_vin:
+    path: /vin/add
+    defaults: {_controller: CoursBundle:Vin:add}
+    
+info_vin:
+    path : /vin/{id}/consultation
+    defaults: {_controller: CoursBundle:Vin:detail}
+    
+suppression_vin:
+    path: /vin/{id}/suppression
+    defaults: { _controller: CoursBundle:Vin:suppression} 
+    
+   #gestion de l'entitée assemblage  
+    
+assemblage:
+    path: /assemblage
+    defaults : {_controller: CoursBundle:Assemblage:affichage}
+    
+add_assemblage:
+    path: /assemblage/add
+    defaults: {_controller: CoursBundle:Assemblage:add}
+    
+info_assemblage:
+    path : /assemblage/{id}/consultation
+    defaults: {_controller: CoursBundle:Assemblage:detail}
+    
+suppression_assemblage:
+    path: /assemblage/{id}/suppression
+    defaults: { _controller: CoursBundle:Assemblage:suppression} 

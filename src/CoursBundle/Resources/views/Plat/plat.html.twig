@@ -1,0 +1,36 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Les plats </title>
+    </head>
+        
+    <body>
+	<a href="{{ path('add_plat') }}">Ajouter un plat </a> 
+	
+        <h4> Les plats </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>type</th>
+                    <th>Détail</th>
+                    <th>Suppression</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plat in plats %}
+                    <tr>
+                        <td> {{ plat.nom }}  </td>
+                        <td> {{ plat.type }} </td>
+                        <td> <a href= "{{ path('info_plat',{ 'id' : plat.id }) }}" > Détails </a> </td>
+                        <td> <a href= "{{ path('suppression_plat',{ 'id' : plat.id }) }}" > Suppression </a> </td>
+                        
+                    </tr>    
+                {% endfor %}
+            </tbody> 
+        </table>
+            <a href= "{{ path('cours_homepage') }}" > Menu principal </a>  
+    </body>
+</html>

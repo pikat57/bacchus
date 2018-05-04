@@ -1,0 +1,301 @@
+CoursBundle\Entity\Accompagnement:
+    type: entity
+    table: accompagnement
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToOne:
+        platId:
+            targetEntity: Plat
+            inversedBy: id
+            joinColumn:
+                name: plat_id
+                referencedColumnName: id     
+        vinId:
+            targetEntity: Vin
+            inversedBy: id
+            joinColumn:
+                name: vin_id
+                referencedColumnName: id
+ 
+       
+            
+
+
+CoursBundle\Entity\Cepage:
+    type: entity
+    table: cepage
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        nom:
+            type: string
+            length: 255
+            unique: true
+        couleur:
+            type: string
+            length: 255
+        origine:
+            type: string
+        saveur: 
+            type: string
+            length: 512
+    OneToMany:
+        cepages:
+            targetEntity: Assemblage
+            mappedBy: cepage
+            
+            
+            
+CoursBundle\Entity\Degustation:
+    type : entity
+    table: degustation
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        vLimpidite:
+            type: string
+            length: 512    
+        vIntensite:
+            type: string
+            length: 512  
+        vNuance:
+            type: string
+            length: 512 
+        vGlycerol:
+            type: string
+            length: 512
+        oIntensite:
+            type: string
+            length: 512
+        oImpression:
+            type: string
+            length: 512
+        oNunces:
+            type: string
+            length: 512
+        oPersistance:
+            type: string
+            length: 512
+        gAttaque:
+            type: string
+            length: 512
+        gSaveur:
+            type: string
+            length: 512
+        gEquilibre:
+            type: string
+            length: 512
+        gTanin:
+            type: string
+            length: 512
+        gRetro:
+            type: string
+            length: 512
+        cEvolution:
+            type: string
+            length: 512
+        cAvenir:
+            type: string
+            length: 512
+    manyToOne:
+        vinId:
+            targetEntity: Vin
+            inversedBy: id
+            joinColumn:
+                name: vin_id
+                referencedColumnName: id        
+        userId:
+            targetEntity: Utilisateur
+            inversedBy: id
+            joinColumn:
+                name: user_id
+                referencedColumnName: id     
+            
+            
+CoursBundle\Entity\Plat:
+    type : entity
+    table: plat
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields: 
+        nom:
+            type: string
+            length: 255
+            unique: true
+        type:
+            type: string
+            length: 512
+        description:
+            type: string
+            length: 2048
+            
+            
+CoursBundle\Entity\Producteur:
+    type: entity
+    table: producteur
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields: 
+        nom:
+            type: string
+            length: 512
+        adresse:
+            type: string
+            length: 512
+        ville:
+            type: string
+            length: 512
+        pays:
+            type: string
+            length: 512
+        responsable:
+            type: string
+            length: 512
+        telephone:
+            type: string
+            length: 512
+        mail:
+            type: string
+            length: 512
+        siteWeb:
+            type: string
+            length: 512
+            
+CoursBundle\Entity\Terroir:
+    type: entity
+    table: terroir
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields: 
+        nom:
+            type : string
+            unique: true
+            lenght: 512
+        sol:
+            type : string
+            length: 512
+        climat:
+            type : string
+            length: 512
+        pays:
+            type : string
+            length: 512
+        ville:
+            type : string
+            length: 512
+               
+CoursBundle\Entity\Utilisateur:
+    type: entity
+    table: utilisateur
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:         
+        nom: 
+            type : string
+            length: 180
+        prenom:
+            type: string
+            length: 180          
+        anneeNaissance:
+            type : integer
+        sexe:
+            type : string
+            length: 8
+
+            
+CoursBundle\Entity\Vin:
+    type: entity
+    table: vin
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:                     
+        nom:
+            type : string
+            unique: true
+            length: 512
+        millesime:  
+            type: integer
+        nbAnneeConservation: 
+            type: integer
+        typeVendange:
+            type : string
+            length: 512
+        type:
+            type : string
+            length: 512
+        prixMoyen:
+            type : string
+            length: 512
+    OneToOne:
+        terroirId:
+            targetEntity: Terroir
+            inversedBy: id
+            joinColumn:
+                name: terroir_id
+                referencedColumnName: id   
+        producteurId:
+            targetEntity: Producteur
+            inversedBy: id
+            joinColumn:
+                name: producteur_id
+                referencedColumnName: id  
+    OneToMany:
+        assemblages:
+            targetEntity: Assemblage
+            mappedBy: id
+ 
+                
+            
+            
+CoursBundle\Entity\Assemblage:
+    type: entity
+    table: assemblage
+    id:
+           id:
+               type: integer
+               generator: { strategy: AUTO }
+    fields: 
+        pourcentage: 
+            type: integer
+    manyToOne:
+        cepage:
+            targetEntity: Cepage
+            inversedBy: id
+            joinColumn:
+                name: cepage
+                referencedColumnName: id        
+        vin:
+            targetEntity: Vin
+            inversedBy: assemblages
+            joinColumn:
+                name: vin
+                referencedColumnName: id    
+
+                    
+            
+            
+
+   
+    
+
+                
+
+
+           
+               

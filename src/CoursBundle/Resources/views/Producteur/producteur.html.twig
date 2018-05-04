@@ -1,0 +1,34 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Les producteurs </title>
+    </head>
+        
+    <body>
+	<a href="{{ path('add_producteur') }}">Ajouter un producteur </a> 
+	
+        <h4> Les producteurs </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Détail</th>
+                    <th>Suppression</th>
+                </tr>
+            </thead> 
+            <tbody>
+                {% for producteur in producteurs %}
+                    <tr>
+                        <td> {{ producteur.nom }}  </td>
+                        
+                        <td> <a href= "{{ path('info_producteur',{ 'id' : producteur.id }) }}" > Détails </a> </td>
+                        <td> <a href= "{{ path('suppression_producteur',{ 'id' : producteur.id }) }}" > suppression </a> </td>
+                    </tr>    
+                {% endfor %}
+            </tbody> 
+        </table>
+            <a href= "{{ path('cours_homepage') }}" > Retour à la liste </a>  
+    </body>
+</html>
