@@ -15,10 +15,11 @@
 
                     {% for assemblage in assemblages %} 
                         <p> {{ assemblage.vin }} </p>
-                        <p> {{ assemblage.cepage }}</p>
+                        <p> {{ assemblage.cepage.nom }}</p>
                         <p> {{ assemblage.pourcentage }}</p>
                         <p> {{ vin.millesime }}</p>
                     {% endfor %}
+                    
         <a href= "{{ path('vin') }}" > Retour à la liste </a>      
                                {{ dump() }}      
     </body>

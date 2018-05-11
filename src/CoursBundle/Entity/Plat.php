@@ -8,6 +8,8 @@
 
 namespace CoursBundle\Entity;
 
+
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Description of Plat
  *
@@ -41,6 +43,25 @@ class Plat {
      */
     private $description;
     
+    
+    private $vins;
+    
+    
+    function __construct() {
+
+        $this->vins = new ArrayCollection() ;
+    }
+    
+    function getVins() {
+        return $this->vins;
+    }
+
+    function setVins($vins) {
+        $this->vins = $vins;
+    }
+
+        
+    
     function getId() {
         return $this->id;
     }
@@ -57,7 +78,7 @@ class Plat {
         return $this->description;
     }
 
-    function setId($platId) {
+    function setId($id) {
         $this->platId = $id;
     }
 

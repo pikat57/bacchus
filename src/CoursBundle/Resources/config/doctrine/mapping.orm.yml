@@ -1,28 +1,3 @@
-CoursBundle\Entity\Accompagnement:
-    type: entity
-    table: accompagnement
-    id:
-        id:
-            type: integer
-            generator: { strategy: AUTO }
-    manyToOne:
-        platId:
-            targetEntity: Plat
-            inversedBy: id
-            joinColumn:
-                name: plat_id
-                referencedColumnName: id     
-        vinId:
-            targetEntity: Vin
-            inversedBy: id
-            joinColumn:
-                name: vin_id
-                referencedColumnName: id
- 
-       
-            
-
-
 CoursBundle\Entity\Cepage:
     type: entity
     table: cepage
@@ -106,13 +81,11 @@ CoursBundle\Entity\Degustation:
     manyToOne:
         vinId:
             targetEntity: Vin
-            inversedBy: id
             joinColumn:
-                name: vin_id
+                name: vinId
                 referencedColumnName: id        
         userId:
             targetEntity: Utilisateur
-            inversedBy: id
             joinColumn:
                 name: user_id
                 referencedColumnName: id     
@@ -136,6 +109,10 @@ CoursBundle\Entity\Plat:
         description:
             type: string
             length: 2048
+    manyToMany:
+        vins:
+            targetEntity: Vin
+            mappedBy: plats
             
             
 CoursBundle\Entity\Producteur:
@@ -242,23 +219,30 @@ CoursBundle\Entity\Vin:
         prixMoyen:
             type : string
             length: 512
-    OneToOne:
+    oneToOne:
         terroirId:
             targetEntity: Terroir
-            inversedBy: id
             joinColumn:
                 name: terroir_id
                 referencedColumnName: id   
         producteurId:
             targetEntity: Producteur
-            inversedBy: id
             joinColumn:
                 name: producteur_id
                 referencedColumnName: id  
-    OneToMany:
-        assemblages:
-            targetEntity: Assemblage
-            mappedBy: id
+    manyToMany:
+        plats:
+            targetEntity: Plat
+            inversedBy: vins
+            joinTable:
+                name: vins_plats
+                joinColumns:
+                    vin_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    plat_id:
+                        referencedColumnName: id
+            
  
                 
             
@@ -267,22 +251,20 @@ CoursBundle\Entity\Assemblage:
     type: entity
     table: assemblage
     id:
-           id:
-               type: integer
-               generator: { strategy: AUTO }
+        id:
+            type: integer
+            generator: { strategy: AUTO }
     fields: 
         pourcentage: 
             type: integer
     manyToOne:
         cepage:
             targetEntity: Cepage
-            inversedBy: id
             joinColumn:
                 name: cepage
                 referencedColumnName: id        
         vin:
             targetEntity: Vin
-            inversedBy: assemblages
             joinColumn:
                 name: vin
                 referencedColumnName: id    

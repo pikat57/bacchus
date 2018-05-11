@@ -92,17 +92,26 @@ class VinController extends Controller {
 
 
         $manager = $this->getDoctrine()->getManager();
-        //$vin = new Vin();
+
         
-       
+
         
         
        $vin = $manager->getRepository('CoursBundle:Vin')->find($id);
        
-         \Doctrine\Common\Util\Debug::dump($vin);
-        $assemblages = $vin->getAssemblages();
+     
+       
+       
+       
         
-
+        $assemblages = $vin->getAssemblages();
+        echo "<br>----------------------------<br>";
+        \Doctrine\Common\Util\Debug::dump($assemblages);
+        echo "<br>----------------------------<br>";
+        //$cepages=$assemblages->getCepages();
+         \Doctrine\Common\Util\Debug::dump($vin);
+         echo "<br>----------------------------<br>";
+           \Doctrine\Common\Util\Debug::dump($vin);
         
         
         

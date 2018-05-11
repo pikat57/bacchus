@@ -33,7 +33,7 @@ class Cepage {
      * @var string couleur du raisin
      */
     private $couleur;
-    
+  
     
     
     /**
@@ -53,7 +53,19 @@ class Cepage {
      
      private $saveur;
     
+      private $assemblages;
+      
+      
+   function getAssemblages() {
+
+        return $this->assemblages;
+    }
     
+    
+
+    function setAssemblages($assemblages) {
+        $this->assemblages = $assemblages;
+    }
     
     function getId() {
         return $this->id;

@@ -56,12 +56,6 @@ class Vin {
      *
      * @var integer identifiant de l'accompagnement
      */
-    private $accompagnementId;
-    
-    /**
-     *
-     * @var integer nombre d'année de conservation
-     */
     private $nbAnneeConservation;
     
     /**
@@ -84,30 +78,23 @@ class Vin {
      */
     private $prixMoyen;
     
-    private $assemblages ;
+    private $plats ;
     
     function __construct() {
-        echo 'coucou';
-        $this->assemblages = new ArrayCollection() ;
+
+        $this->plats = new ArrayCollection() ;
     }
             
-   
-    
-    function getAssemblages() {
-        
-        return $this->assemblages;
+    function getPlats() {
+        return $this->plats;
     }
-    
-    
 
-    function setAssemblages($assemblages) {
-        $this->assemblages = $assemblages;
+    function setPlats($plats) {
+        $this->plats = $plats;
     }
-    
-    
 
         
-    
+        
     function getId() {
         return $this->id;
     }
