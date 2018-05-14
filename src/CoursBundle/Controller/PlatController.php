@@ -27,7 +27,15 @@ class PlatController extends Controller {
                 ->add('nom', 'text')
                 ->add('type', 'text')
                 ->add('description', 'textarea')
+                ->add('vins',
+                      'entity',
+                       array ('class'=> 'CoursBundle\Entity\Vin',
+                      'property' => 'nom',
+                       'label' =>  'Accompagnement',
+                       'multiple' => true,
+                       'required' => false))
                 ->add('save', 'submit');
+                
         $form = $formBuilder->getForm();
 
         $form->handleRequest($request);
@@ -73,7 +81,7 @@ class PlatController extends Controller {
         
         $manager = $this->getDoctrine()->getManager();
 
-        $plat= $manager->getRepository('CoursBundle:Plat')->find(id);
+        $plat= $manager->getRepository('CoursBundle:Plat')->find($id);
         
         
         $manager->remove($plat);

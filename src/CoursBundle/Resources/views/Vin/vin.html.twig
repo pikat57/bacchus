@@ -11,8 +11,7 @@
 	<a href="{{ path('add_vin') }}">Ajouter un vin
        </a> 
 	
-        <h4> Les vin
-           s </h4>
+        <h4> Les vins </h4>
         <table>
             <thead>
                 <tr>
@@ -25,7 +24,7 @@
                 {% for vin in vins %}
                     <tr>
                         <td> {{ vin.nom }}  </td>
-                        <td> {{ vin.assemblages }}  </td>
+                        <td> {{ vin.millesime }}  </td>
                         
                         <td> <a href= "{{ path('info_vin',{ 'id' : vin.id }) }}" > Détails </a> </td>
                         <td> <a href= "{{ path('suppression_vin',{ 'id' : vin.id }) }}" > suppression </a> </td>
