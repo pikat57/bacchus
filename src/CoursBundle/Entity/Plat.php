@@ -60,7 +60,16 @@ class Plat {
         $this->vins = $vins;
     }
 
-        
+    function addVin(Vin $vin)    
+    {
+        $this->vins[] = $vin;
+    }
+    
+    public function removeVin(Vin $vin) // removeCategorie sans « s » !
+  {
+    // Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
+    $this->categories->removeElement($vin);
+  }
     
     function getId() {
         return $this->id;

@@ -98,6 +98,8 @@ class Vin {
     }
     
     
+    
+    
     function getAssemblages() {
         return $this->assemblages;
     }

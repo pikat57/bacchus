@@ -28,14 +28,13 @@ class PlatController extends Controller {
                 ->add('type', 'text')
                 ->add('description', 'textarea')
                 ->add('vins',
-                      'entity',
-                       array ('class'=> 'CoursBundle\Entity\Vin',
-                      'property' => 'nom',
-                       'label' =>  'Accompagnement',
-                       'multiple' => true,
-                       'required' => false))
+                     'entity', array('class' => 'CoursBundle\Entity\Vin',
+                    'property' => 'nom',
+                    'label' => 'Accompagnement',
+                    'multiple' => true,
+                    'required' => false))
                 ->add('save', 'submit');
-                
+
         $form = $formBuilder->getForm();
 
         $form->handleRequest($request);
@@ -45,9 +44,7 @@ class PlatController extends Controller {
 
 
             $platCourant = $this->getDoctrine()->getManager();
-
             $platCourant->persist($plat);
-
             $platCourant->flush();
 
             return $this->redirectToRoute("plat");
@@ -76,21 +73,19 @@ class PlatController extends Controller {
 
         return $this->render("CoursBundle:Plat:detail.html.twig", array('plat' => $plat));
     }
-    
-        public function suppressionAction($id){
-        
+
+    public function suppressionAction($id) {
+
         $manager = $this->getDoctrine()->getManager();
 
-        $plat= $manager->getRepository('CoursBundle:Plat')->find($id);
-        
-        
+        $plat = $manager->getRepository('CoursBundle:Plat')->find($id);
+
+
         $manager->remove($plat);
 
         $manager->flush();
 
         return $this->redirectToRoute('plat');
-        
     }
 
 }
-
