@@ -5,23 +5,34 @@
         <meta charset="utf-8">
         <title> Les vins </title>
     </head>
-        
+          
     <body>
-	
+	  
         <h2> {{ vin.nom }} </h2>
-                    <h4>millesime</h4>  <p> {{ vin.millesime }} </p>
+        <h4>details</h4>
+                    <p>millesime  : {{ vin.millesime }} </p>
+                    <p>Appelation : {{ vin.type }} </p>
+                    
                         
                     <h4>Composition </h4>
 
                     {% for assemblage in assemblages %} 
-                        <p> {{ assemblage.vin }} </p>
-                        <p> {{ assemblage.cepage.nom }}</p>
-                        <p> {{ assemblage.pourcentage }}</p>
-                        <p> {{ vin.millesime }}</p>
+                        
+                        <p> {{ assemblage.cepage.nom }} : {{ assemblage.pourcentage }}</p>
+                       
+                    {% endfor %}
+                    <h4>Accompagnement </h4>
+                    
+                    {% for plat in plats %} 
+                       
+                        <p> {{ plat.nom }}</p>
+                        
+                       
                     {% endfor %}
                     
         <a href= "{{ path('vin') }}" > Retour à la liste </a>      
-                               {{ dump() }}      
+         {{ dump() }}
+                           
     </body>
 </html>
 {# empty Twig template #}

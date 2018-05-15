@@ -79,10 +79,14 @@ class Vin {
     private $prixMoyen;
     
     private $plats ;
+    private $assemblages;
+    
+    
     
     function __construct() {
 
         $this->plats = new ArrayCollection() ;
+         $this->assemblages = new ArrayCollection();
     }
             
     function getPlats() {
@@ -92,8 +96,17 @@ class Vin {
     function setPlats($plats) {
         $this->plats = $plats;
     }
+    
+    
+    function getAssemblages() {
+        return $this->assemblages;
+    }
 
-        
+    function setAssemblages($assemblages) {
+        $this->assemblages = $assemblages;
+    }
+
+            
         
     function getId() {
         return $this->id;

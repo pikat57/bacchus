@@ -9,7 +9,7 @@ CoursBundle\Entity\Cepage:
         nom:
             type: string
             length: 255
-            unique: true
+            unique: false
         couleur:
             type: string
             length: 255
@@ -219,12 +219,13 @@ CoursBundle\Entity\Vin:
         prixMoyen:
             type : string
             length: 512
-    oneToOne:
+    manyToOne:
         terroirId:
             targetEntity: Terroir
             joinColumn:
                 name: terroir_id
-                referencedColumnName: id   
+                referencedColumnName: id 
+    oneToOne:            
         producteurId:
             targetEntity: Producteur
             joinColumn:
@@ -242,6 +243,10 @@ CoursBundle\Entity\Vin:
                 inverseJoinColumns:
                     plat_id:
                         referencedColumnName: id
+    oneToMany:
+        assemblages:
+            targetEntity: Assemblage
+            mappedBy: vin
             
  
                 
@@ -265,6 +270,7 @@ CoursBundle\Entity\Assemblage:
                 referencedColumnName: id        
         vin:
             targetEntity: Vin
+            inversedBy: assemblages
             joinColumn:
                 name: vin
                 referencedColumnName: id    

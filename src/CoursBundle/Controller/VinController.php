@@ -103,24 +103,11 @@ class VinController extends Controller {
        
        
        
-        
+        $plats = $vin->getPlats();
         $assemblages = $vin->getAssemblages();
-        echo "<br>----------------------------<br>";
-        \Doctrine\Common\Util\Debug::dump($assemblages);
-        echo "<br>----------------------------<br>";
-        //$cepages=$assemblages->getCepages();
-         \Doctrine\Common\Util\Debug::dump($vin);
-         echo "<br>----------------------------<br>";
-           \Doctrine\Common\Util\Debug::dump($vin);
-        
-        
-        
-        //$assemblages = $manager->getRepository('CoursBundle:Assemblage')->find($id);
-        //$cepages = $manager->getRepository('CoursBundle:Cepage')->findBy($assemblages->get);
-        //$datas = array_merge($vin,$assemblages,$cepages);
-//print_r($datas);
 
-        return $this->render("CoursBundle:Vin:detail.html.twig", array('vin'=>$vin,'assemblages'=>$assemblages));
+
+        return $this->render("CoursBundle:Vin:detail.html.twig", array('vin'=>$vin,'assemblages'=>$assemblages,'plats'=>$plats));
     }
     
         
