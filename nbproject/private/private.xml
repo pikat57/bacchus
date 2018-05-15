@@ -11,10 +11,12 @@
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/VinController.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/security.yml</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/services.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Entity/Vin.php</file>
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/ProducteurController.php</file>
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/CepageController.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/config.yml</file>
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/config/doctrine/mapping.orm.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Entity/Plat.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/AppKernel.php</file>
         </group>
     </open-files>
