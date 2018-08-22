@@ -74,6 +74,3 @@ fos_user:
     from_email:
         address: "pikat57@gmail.com"
         sender_name: "Jean-Yves Dumollard"
-    registration:
-        form:
-            type: CoursBundle\Form\RegistrationType

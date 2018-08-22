@@ -8,7 +8,7 @@
 
 namespace CoursBundle\Entity;
 
-
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -17,14 +17,14 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author dumollard
  */
-class Utilisateur extends \FOS\UserBundle\Model\User {
+class Utilisateur extends BaseUser {
     //put your code here
     
 
     protected $nom;
     protected $prenom;
     protected $anneeNaissance;
-     protected $sexe;
+    protected $sexe;
 
     //protected $password;
     

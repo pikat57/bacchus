@@ -47,7 +47,7 @@ class PlatController extends Controller {
             $platCourant = $this->getDoctrine()->getManager();
 
             $platCourant->persist($plat);
-
+        
             $platCourant->flush();
 
             return $this->redirectToRoute("plat");
