@@ -43,6 +43,13 @@ class VinController extends Controller {
                        'label' => 'producteur',
                        'multiple' => false,
                        'required' => false))
+                ->add('plats',
+                      'entity',
+                       array ('class'=> 'CoursBundle\Entity\Plat',
+                      'property' => 'nom',
+                       'label' => 'plat',
+                       'multiple' => true,
+                       'required' => false))
                 ->add('nbAnneeConservation', 'integer')
                 ->add('TypeVendange', 'choice',array(
         'choices'  => array(

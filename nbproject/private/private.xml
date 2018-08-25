@@ -15,10 +15,30 @@
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Form/RegistrationType.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/config.yml</file>
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/config/doctrine/mapping.orm.yml</file>
+<<<<<<< HEAD
             <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Entity/Utilisateur.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/AppKernel.php</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/routing.yml</file>
             <file>file:/home/jean-yves/projets/bacchus/app/config/security.yml</file>
+=======
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/views/Plat/addPlat.html.twig</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/config/routing.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/PlatController.php</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/VinController.php</file>
+<<<<<<< HEAD
+            <file>file:/home/jean-yves/projets/bacchus/app/config/security.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/app/config/services.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Entity/Vin.php</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/ProducteurController.php</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Controller/CepageController.php</file>
+            <file>file:/home/jean-yves/projets/bacchus/app/config/config.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/config/doctrine/mapping.orm.yml</file>
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Entity/Plat.php</file>
+            <file>file:/home/jean-yves/projets/bacchus/app/AppKernel.php</file>
+=======
+            <file>file:/home/jean-yves/projets/bacchus/src/CoursBundle/Resources/views/Vin/vin.html.twig</file>
+>>>>>>> d97a736c04b0bd5780cb31927a752d6bf93a389c
+>>>>>>> bc42d8e800fadbaf95ff1e0f0081793694b7b08e
         </group>
     </open-files>
 </project-private>

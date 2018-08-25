@@ -113,6 +113,7 @@ CoursBundle\Entity\Plat:
         vins:
             targetEntity: Vin
             mappedBy: plats
+            cascade: ["persist"]
             
             
 CoursBundle\Entity\Producteur:
@@ -239,6 +240,7 @@ CoursBundle\Entity\Vin:
         plats:
             targetEntity: Plat
             inversedBy: vins
+            cascade: ["persist"]
             joinTable:
                 name: vins_plats
                 joinColumns:
